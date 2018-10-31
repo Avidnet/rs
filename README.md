@@ -16,3 +16,4 @@ Avidnet VM that has an instance of the Geonode has the following configuration a
 - RAM: 6GB
 - HDD: 150GB
 - OS: Ubuntu 16.04 LTS
+- Hostname: avidnet-geonode
