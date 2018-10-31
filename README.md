@@ -21,3 +21,7 @@ Avidnet VM that has an instance of the Geonode has the following configuration a
 - root: parham
 
 Geonode instance in this VM has a user with `1995parham` username and default `admin:admin` is avaiable on `/en/admin/`.
+
+## Geonode with I1820
+In order to setup Geonode to work with I1820 we must find a set of useful [APIs from Geonode](http://docs.geonode.org/en/master/reference/api.html) to call them from I1820 to get
+remote sensing data.
