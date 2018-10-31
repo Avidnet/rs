@@ -20,4 +20,4 @@ Avidnet VM that has an instance of the Geonode has the following configuration a
 - IP Address: 192.168.73.20
 - root: parham
 
-Geonode instance in this VM has a user with `1995parham` username.
+Geonode instance in this VM has a user with `1995parham` username and default `admin:admin` is avaiable on `/en/admin/`.
