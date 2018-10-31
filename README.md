@@ -17,3 +17,4 @@ Avidnet VM that has an instance of the Geonode has the following configuration a
 - HDD: 150GB
 - OS: Ubuntu 16.04 LTS
 - Hostname: avidnet-geonode
+- IP Address: 192.168.73.20
