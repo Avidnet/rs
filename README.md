@@ -18,3 +18,6 @@ Avidnet VM that has an instance of the Geonode has the following configuration a
 - OS: Ubuntu 16.04 LTS
 - Hostname: avidnet-geonode
 - IP Address: 192.168.73.20
+- root: parham
+
+Geonode instance in this VM has a user with `1995parham` username.
