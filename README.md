@@ -23,6 +23,8 @@ Avidnet VM that has an instance of the Geonode has the following configuration a
 Geonode instance in this VM has a user with `1995parham` username and default `admin:admin` is avaiable on `/en/admin/`.
 
 ## Geonode Configuration
+File `/etc/geonode/local_settings.py`:
+
 - `GEOSERVER_LOCATION = 'http://192.168.73.20:8080/geosever/'`
 - `MAPBOX_ACCESS_TOKEN = <secret>`
 
