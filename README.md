@@ -32,3 +32,7 @@ File `/etc/geonode/local_settings.py`:
 ## Geonode with I1820
 In order to setup Geonode to work with I1820 we must find a set of useful [APIs from Geonode](http://docs.geonode.org/en/master/reference/api.html) to call them from I1820 to get
 remote sensing data.
+
+## Future of Geonode
+Avidnet desicdes on 3 Nov 2018 to implement an instance of Geonode in I1820 but based on APIs that are provided by GeoServer.
+By this way we can extend it easily when the GeoServer version changes.
