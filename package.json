@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/Avidnet/rs/issues"
   },
-  "homepage": "https://github.com/Avidnet/rs#readme"
+  "homepage": "https://github.com/Avidnet/rs#readme",
+  "dependencies": {
+    "geotiff": "^1.0.0-beta.6"
+  }
 }
