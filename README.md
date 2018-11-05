@@ -5,8 +5,15 @@ by detecting the diseases and many more problems in crops before they get spread
 
 ## Steps
 1. Gathering raw images from the satellite.
-2. Pre-Processing
+2. Pre-Processing (SNAP)
+    1. Atmospheric Correction (Send2Cor)
+    2. Geometeric Correction
+    3. Resample (20 -> 10)
 3. Processing based on gathered data from the field and predefined models.
+    1. Shakhes (!) based on calculation of bands
+    2. Corelation between parameter and Shakhes based on formula that is caculated from eghlim.
+    3. parameters can be LAI, Biomass, Production
+4. 
 
 ## VM
 Avidnet VM that has an instance of the Geonode has the following configuration and features.
