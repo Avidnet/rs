@@ -10,10 +10,11 @@ by detecting the diseases and many more problems in crops before they get spread
     2. Geometeric Correction
     3. Resample (20 -> 10)
 3. Processing based on gathered data from the field and predefined models.
-    1. Shakhes (!) based on calculation of bands
-    2. Corelation between parameter and Shakhes based on formula that is caculated from eghlim.
+    1. Caculate indicators based on bands.
+    2. Corelation between needed parameters and indicators based on formula that is caculated from the climate.
     3. parameters can be LAI, Biomass, Production
-4. 
+4. Air humidity, Air temperature, Vegetation, temperature diagram, and height diagram based on these values we can have evapotranspiration diagram.
+5. Based on evapotranspiration diagram and input water we can have water needs diagram.
 
 ## VM
 Avidnet VM that has an instance of the Geonode has the following configuration and features.
