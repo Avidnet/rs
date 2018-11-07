@@ -42,7 +42,7 @@ File `/etc/geonode/local_settings.py`:
 ## Geonode with I1820
 To handle the satellite images in I1820, Avidnet implements a component named `rs`.
 This component uses [geotiff.js](https://github.com/geotiffjs/geotiff.js)
-and parses given GeoTIFF image and stores its meta-data including date, location (latitude and longitude) and values into
+and parses given GeoTIFF image and stores its meta-data including date, location (latitude and longitude) and value(s) into
 Database. `rs` provides APIs for retrieving these data based on given polygon and more.
 
 Avidnet confirms `rs` implementation on 5 Nov 2018 meeting.
