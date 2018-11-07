@@ -4,7 +4,7 @@
   "description": "The Remote Sensing in Agriculture by Avidnet",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "eslint --color index.js"
   },
   "repository": {
     "type": "git",
