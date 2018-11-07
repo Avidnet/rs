@@ -1,4 +1,6 @@
 # [Remote Sensing](https://en.wikipedia.org/wiki/Remote_sensing)
+[![Travis branch](https://img.shields.io/travis/com/Avidnet/rs/master.svg?style=flat-square)](https://travis-ci.com/Avidnet/rs)
+
 ## Introduction
 We want to use satellite images to improve agriculture productivity
 by detecting the diseases and many more problems in crops before they get spread in the farm.
