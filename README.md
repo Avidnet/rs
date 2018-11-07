@@ -18,7 +18,12 @@ by detecting the diseases and many more problems in crops before they get spread
     4. Air humidity, Air temperature, Vegetation, Temperature satellite image, and Height satellite image are the basis for evapotranspiration diagram.
     5. Based on evapotranspiration diagram and input water volume we can have water needs diagram.
 
-## VM
+## Refrence Location
+Tests are based on [Joveyn County](https://www.openstreetmap.org/#map=12/36.5833/57.4568) satellite images that
+are available in `sample` folder with GeoTIFF format.
+
+## Geonode
+### VM
 Avidnet VM that has an instance of the Geonode has the following configuration and features.
 (Just for Avidnet team information)
 
@@ -32,14 +37,14 @@ Avidnet VM that has an instance of the Geonode has the following configuration a
 
 Geonode instance in this VM has a user with `1995parham` username and default `admin:admin` is avaiable on `/en/admin/`.
 
-## Geonode Configuration
+### Geonode Configuration
 File `/etc/geonode/local_settings.py`:
 
 - `GEOSERVER_LOCATION = 'http://192.168.73.20:8080/geosever/'`
 - `MAPBOX_ACCESS_TOKEN = <secret>`
 
 
-## Geonode with I1820
+## with [I1820](https://I1820.github.io)
 To handle the satellite images in I1820, Avidnet implements a component named `rs`.
 This component uses [geotiff.js](https://github.com/geotiffjs/geotiff.js)
 and parses given GeoTIFF image and stores its meta-data including date, location (latitude and longitude) and value(s) into
