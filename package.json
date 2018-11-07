@@ -4,7 +4,7 @@
   "description": "The Remote Sensing in Agriculture by Avidnet",
   "main": "index.js",
   "scripts": {
-    "test": "eslint --color index.js"
+    "test": "eslint --color index.js && mocha"
   },
   "repository": {
     "type": "git",
@@ -31,6 +31,7 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-node": "^8.0.0",
     "eslint-plugin-promise": "^4.0.1",
-    "eslint-plugin-standard": "^4.0.0"
+    "eslint-plugin-standard": "^4.0.0",
+    "mocha": "^5.2.0"
   }
 }
