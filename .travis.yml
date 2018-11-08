@@ -6,11 +6,16 @@ node_js:
 services:
   - docker
 
-env:
-  - PGHOST=172.17.0.1 PGUSER=rs PGDATABASE=rs PGPASSWORD=123123 PGPORT=5432
-
 before_install:
-  - docker run --name rs-postgres -p 5432 -e POSTGRES_PASSWORD=123123 -e POSTGRES_USER=rs -e POSTGRES_DB=rs -d mdillon/postgis:11-alpine # postgis at your service
+  # shutdowns the system postgresql
+  - sudo service postgresql stop
+  # waits for postgresql to shutdown
+  - while sudo lsof -Pi :5432 -sTCP:LISTEN -t; do sleep 1; done
+
+  # provides basic configuration
+  - cp .env.example .env
+  # postgis at your service
+  - docker run --name rs-postgres -p 5432:5432 -e POSTGRES_PASSWORD=123123 -e POSTGRES_USER=rs -e POSTGRES_DB=rs -d mdillon/postgis:11-alpine
 
 before_script:
   - node query.js # builds database tables
