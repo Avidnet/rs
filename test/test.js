@@ -111,7 +111,7 @@ describe('Image Handler', function () {
 
     const res = await storage.fetch(lat, lng, 20)
     console.table(res)
-    assert.ok(res[1].value === result)
+    assert.ok(res[0].value === result)
 
     await storage.disconnect()
     done()
