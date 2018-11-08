@@ -16,6 +16,7 @@ const assert = require('assert')
 const fs = require('fs')
 const GeoTIFF = require('geotiff')
 const Storage = require('../lib/storage')
+const ImageHandler = require('../lib/image')
 
 require('dotenv').config()
 
@@ -29,7 +30,7 @@ describe('Joveyn', function () {
   const result = 4.337339878082275
   const path = './sample/joveyn.tif'
 
-  it('Neghab Railway Station', async () => {
+  it('Neghab Railway Station', async (done) => {
     const arrayBuffer = fs.readFileSync(path).buffer
     const tiff = await GeoTIFF.fromArrayBuffer(arrayBuffer)
     const image = await tiff.getImage() // by default, the first image is read.
@@ -59,11 +60,12 @@ describe('Joveyn', function () {
         }
       }
     }
+    done()
   })
 })
 
 describe('Storage', function () {
-  it('I1820', async () => {
+  it('I1820 Location', async (done) => {
     const value = 1.33
     const lat = 35.8066282 // I1820 location latitude
     const lng = 51.3989276 // I1820 location longitude
@@ -80,5 +82,38 @@ describe('Storage', function () {
     assert.ok(res[0].value === value)
 
     await storage.disconnect()
+    done()
   })
+})
+
+describe('Image Handler', function () {
+  it('Joveyn - Neghab Railway Station', async (done) => {
+    const storage = new Storage()
+    const ih = new ImageHandler()
+
+    const path = './sample/joveyn.tif'
+    const date = '07-Sep-2016'
+
+    await storage.connect()
+
+    const values = await ih.extract(path)
+
+    for (const value of values) {
+      if (value.value > 0) { // values lower than equal 0 is not valid in rs context so ignores them
+        await storage.insert(value.value, value.latitude, value.longitude, date)
+      }
+    }
+
+    // check the value of the lanform near the neghab railway station
+    const lat = 36.65449
+    const lng = 57.41716
+    const result = 4.337339878082275
+
+    const res = await storage.fetch(lat, lng, 20)
+    console.table(res)
+    assert.ok(res[1].value === result)
+
+    await storage.disconnect()
+    done()
+  }).timeout(1000 * 1000)
 })
