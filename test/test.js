@@ -30,7 +30,7 @@ describe('Joveyn', function () {
   const result = 4.337339878082275
   const path = './sample/joveyn.tif'
 
-  it('Neghab Railway Station', async (done) => {
+  it('Neghab Railway Station', async () => {
     const arrayBuffer = fs.readFileSync(path).buffer
     const tiff = await GeoTIFF.fromArrayBuffer(arrayBuffer)
     const image = await tiff.getImage() // by default, the first image is read.
@@ -60,12 +60,11 @@ describe('Joveyn', function () {
         }
       }
     }
-    done()
   })
 })
 
 describe('Storage', function () {
-  it('I1820 Location', async (done) => {
+  it('I1820 Location', async () => {
     const value = 1.33
     const lat = 35.8066282 // I1820 location latitude
     const lng = 51.3989276 // I1820 location longitude
@@ -82,12 +81,11 @@ describe('Storage', function () {
     assert.ok(res[0].value === value)
 
     await storage.disconnect()
-    done()
   })
 })
 
 describe('Image Handler', function () {
-  it('Joveyn - Neghab Railway Station', async (done) => {
+  it('Joveyn - Neghab Railway Station', async () => {
     const storage = new Storage()
     const ih = new ImageHandler()
 
@@ -111,9 +109,8 @@ describe('Image Handler', function () {
 
     const res = await storage.fetch(lat, lng, 20)
     console.table(res)
-    assert.ok(res[0].value === result)
+    assert.ok(res[0].value - result < 0.00001)
 
     await storage.disconnect()
-    done()
-  }).timeout(1000 * 1000)
+  }).timeout(20 * 1000)
 })
