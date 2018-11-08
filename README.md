@@ -30,6 +30,12 @@ are available in `sample` folder with GeoTIFF format.
 docker run --name rs-postgres -p 5432:5432 -e POSTGRES_PASSWORD=123123 -e POSTGRES_USER=rs -e POSTGRES_DB=rs --rm -d mdillon/postgis:11-alpine
 ```
 
+2. Build required tables with the following command:
+
+```sh
+node query.js
+```
+
 ## Geonode
 ### VM
 Avidnet VM that has an instance of the Geonode has the following configuration and features.
