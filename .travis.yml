@@ -6,5 +6,9 @@ node_js:
 services:
   - docker
 
+before_install:
+  - cp .env.example .env # provides basic configuration
+  - docker run --name rs-postgres -p 5432:5432 -e POSTGRES_PASSWORD=123123 -e POSTGRES_USER=rs -e POSTGRES_DB=rs -d mdillon/postgis:11-alpine # postgis at your service
+
 before_script:
-  - node query.js # build database tables
+  - node query.js # builds database tables
