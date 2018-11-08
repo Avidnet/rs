@@ -27,6 +27,7 @@ async function createTables () {
   console.log('Waiting for PG connection')
   await client.connect()
 
+  // 2D point geography when srid is not specified defaults to 4326 WGS 84 long lat
   console.log('Waiting for create table query')
   const res = await client.query(`
   CREATE TABLE IF NOT EXISTS points (
