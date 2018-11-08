@@ -65,15 +65,20 @@ describe('Joveyn', function () {
 describe('Storage', function () {
   it('I1820', async () => {
     const value = 1.33
-    const lat = 35.8066282
-    const lng = 51.3989276
+    const lat = 35.8066282 // I1820 location latitude
+    const lng = 51.3989276 // I1820 location longitude
     const date = '07-Sep-2016'
 
     const storage = new Storage()
+
     await storage.connect()
+
     await storage.insert(value, lat, lng, date)
-    const res = await storage.fetch(35.807715, 51.398652)
+
+    const res = await storage.fetch(35.807715, 51.398652) // a point within the 10m range of I1820
     console.table(res)
+    assert.ok(res[0].value === value)
+
     await storage.disconnect()
   })
 })
