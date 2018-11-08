@@ -22,6 +22,14 @@ by detecting the diseases and many more problems in crops before they get spread
 Tests are based on [Joveyn County](https://www.openstreetmap.org/#map=12/36.5833/57.4568) satellite images that
 are available in `sample` folder with GeoTIFF format.
 
+## Up and Running
+
+1. This project requires a [PostGIS](https://postgis.net) database, and you can instantiate it with docker by the following command:
+
+```sh
+docker run --name rs-postgres -p 5432:5432 -e POSTGRES_PASSWORD=123123 -e POSTGRES_USER=rs -e POSTGRES_DB=rs -d mdillon/postgis:11-apline
+```
+
 ## Geonode
 ### VM
 Avidnet VM that has an instance of the Geonode has the following configuration and features.
