@@ -112,5 +112,5 @@ describe('Image Handler', function () {
     assert.ok(res[0].value - result < 0.00001)
 
     await storage.disconnect()
-  }).timeout(20 * 1000)
+  }).timeout(25 * 1000)
 })
