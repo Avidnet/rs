@@ -36,6 +36,9 @@ docker run --name rs-postgres -p 5432:5432 -e POSTGRES_PASSWORD=123123 -e POSTGR
 node query.js
 ```
 
+## Caution :warning:
+This component does not have good performance, and its inserts to PostGIS takes 19340ms on a regular system.
+
 ## Geonode
 ### VM
 Avidnet VM that has an instance of the Geonode has the following configuration and features.
