@@ -32,11 +32,12 @@ async function createTables () {
   const res = await client.query(`
   CREATE TABLE IF NOT EXISTS points (
     id SERIAL PRIMARY KEY,
+    date DATE,
     value DOUBLE PRECISION,
     location GEOGRAPHY(POINT)
   );
   `)
-  console.log(res)
+  console.table(res.rows)
 
   await client.end()
 }
