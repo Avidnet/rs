@@ -1,3 +1,10 @@
 language: node_js
+
 node_js:
   - "node"
+
+services:
+  - docker
+
+before_script:
+  - node query.js # build database tables
